@@ -24,12 +24,20 @@
 @media screen and (min-width : 100px) and (max-width : 500px) {
   .NavList {
     width: 100%;
-    gap: 10px;
+    
+  }
+
+  .NavList ul {
+    gap: 50px;
   }
 
   .ListItem {
-    font-size: 10px;
+    font-size: 12px;
     justify-content: center;
+  }
+
+  footer {
+    font-size: 12px;
   }
   
 }
@@ -38,6 +46,7 @@
 
 .Footer {
   background-color: grey;
+  padding: 20px;
 }
 
 footer {
