@@ -33,3 +33,14 @@
   }
   
 }
+
+/* Footer */
+
+.Footer {
+  background-color: grey;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
