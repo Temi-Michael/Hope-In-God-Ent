@@ -21,14 +21,14 @@
   color: black;
 }
 
-@media screen and (min-width : 200px) and (max-width : 500px) {
+@media screen and (min-width : 100px) and (max-width : 400px) {
   .NavList {
     width: 100%;
     gap: 10px;
   }
 
   .ListItem {
-    font-size: small;
+    font-size: 10px;
     justify-content: center;
   }
   
