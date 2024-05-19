@@ -30,7 +30,7 @@ export default function Footer() {
             <footer>
                 <p>Hope In God Ent. <sup>©</sup></p>
                 <p>Created by Lazy_Codes</p>
-                <Link to='https://github.com/Temi-Michael/' target="_blank"><FontAwesomeIcon icon={faGithub} /></Link>
+                <Link to='https://github.com/Temi-Michael/' target="_blank"><FontAwesomeIcon icon={faGithub} /><sub>Github</sub></Link>
                 <Time />
             </footer>
         </div>
