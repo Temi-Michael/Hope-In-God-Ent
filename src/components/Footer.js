@@ -28,7 +28,8 @@ export default function Footer() {
     return (
         <div className="Footer">
             <footer>
-                <p>Created by Lazy_Codes</p><br></br><br></br>
+                <p>Hope In God Ent. <sup>©</sup></p>
+                <p>Created by Lazy_Codes</p>
                 <Link to='https://github.com/Temi-Michael/' target="_blank"><FontAwesomeIcon icon={faGithub} /></Link>
                 <Time />
             </footer>

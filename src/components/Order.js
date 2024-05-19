@@ -10,38 +10,62 @@ export default function Order() {
   const [number, setNumber] = useState("");
   const [deliver, setDeliver] = useState("");
 
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [day, setDay] = useState(new Date().toLocaleDateString());
+
+
+  // setTime(new Date().toLocaleTimeString());
+
+
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(firstname.length <= 5) {
-        alert('Confirm Name')
+    if (firstname.length <= 5) {
+      alert('Confirm Name')
     } else {
-        setFirstname("")
-        setLastname("")
-        setEmail("")
-        setPhone("")
-        setAddress("")
+      setFirstname("")
+      setLastname("")
+      setEmail("")
+      setPhone("")
+      setAddress("")
     }
   }
 
-  const generatePDF = () => {
-    const amount = number * 3700
+  let amount1 = number * 3600;
+  let amount2 = number * 3700
+  let price = number > 20 ? amount1 : amount2
+
+  const generatePDF = (e) => {
+    e.preventDefault()
+    setFirstname("")
+    setLastname("")
+    setEmail("")
+    setPhone("")
+    setAddress("")
+    setNumber("")
     const doc = new jsPDF();
 
-    doc.text('Egg Order', 10, 10);
+    doc.text(`${firstname} ${lastname} Egg Order`, 10, 10);
     doc.text(`Name: ${firstname} ${lastname}`, 10, 20);
-    doc.text(`Amount: ${number}`, 10, 30);
-    doc.text(`Date: ${amount}`, 10, 40);
+    doc.text(`Number of Crates: ${number}`, 10, 30);
+    doc.text(`Amount: ${price}`, 10, 40);
+    doc.text(`Day: ${day}`, 10, 50);
+    doc.text(`Time: ${time}`, 10, 60);
 
-    doc.save('receipt.pdf');
-  };
+    doc.save(`${firstname}'s Egg Order.pdf`);
+  }
+
 
   return (
     <div className="FormBody">
       <h1>Place Your Egg Orders</h1>
       <form action="" method="" onSubmit={handleSubmit} >
-          <fieldset>
+        <fieldset className="order">
+          <div className="formorder">
             <field className="firstname">
-              <label htmlFor="firstname">First Name</label>
+              <label htmlFor="firstname">First Name<sup className="ast">*</sup></label>
               <input
                 type="text"
                 id="firstname"
@@ -51,7 +75,7 @@ export default function Order() {
               />
             </field>
             <field className="lastname">
-              <label htmlFor="lastname">Last Name</label>
+              <label htmlFor="lastname">Last Name<sup className="ast">*</sup></label>
               <input
                 type="text"
                 id="lastname"
@@ -91,7 +115,7 @@ export default function Order() {
               />
             </field>
             <field className="number">
-              <label htmlFor="number">Number Of Crates</label>
+              <label htmlFor="number">Number Of Crates<sup className="ast">*</sup></label>
               <input
                 type="number"
                 id="number"
@@ -119,14 +143,15 @@ export default function Order() {
                 onChange={(e) => setDeliver(e.target.value)}
               />
             </field>
-          </fieldset>
+          </div>
+        </fieldset>
       </form>
 
       <p className="prologue">
-        I, { firstname } { lastname } would like to order a total of {number} crates of eggs at the current price of #3,700.
-        And i would be making a transaction of {number * 3700 } in which my purchase receipt would be generated below.
+        I, {firstname} {lastname} would like to order a total of {number} crates of eggs at the current price of {number > 20 ? 3600 : 3700}.
+        And i would be making a transaction of {price} in which my purchase receipt would be generated below.
       </p>
-      <button onClick={generatePDF}>Generate Your Receipt</button>
+      <button type="submit" className="orderbtn" onClick={generatePDF}>Generate Your Receipt</button>
     </div>
   );
 }
