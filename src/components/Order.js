@@ -10,8 +10,8 @@ export default function Order() {
   const [number, setNumber] = useState("");
   const [deliver, setDeliver] = useState("");
 
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
-  const [day, setDay] = useState(new Date().toLocaleDateString());
+  const time = new Date().toLocaleTimeString();
+  const day = new Date().toLocaleDateString();
 
 
   // setTime(new Date().toLocaleTimeString());
