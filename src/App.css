@@ -42,6 +42,10 @@ fieldset .formorder {
 
 @media screen and (min-width : 100px) and (max-width : 500px) {
 
+  .NavList {
+    width: 100%;
+  }
+  
   .NavList ul {
     gap: 50px;
   }
@@ -60,14 +64,16 @@ fieldset .formorder {
 /* CONTACT PAGE */
 
 .contact {
-  width: 50vw;
+  width: 70%;
   height: fit-content;
-  margin: 20px auto;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .contact input {
-  width: 300px;
+  width: 350px;
   height: 30px;
   border: 1px solid grey;
   border-radius: 5px;
@@ -75,7 +81,7 @@ fieldset .formorder {
 }
 
 .contact textarea {
-  width: 300px;
+  width: 350px;
   height: 100px;
   border: 1px solid grey;
   border-radius: 5px;
