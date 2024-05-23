@@ -33,6 +33,11 @@ fieldset .formorder {
   justify-content: center;
   padding: 50px;
   background-color: grey;
+  animation-name: navlist;
+}
+
+@keyframes navlist {
+  
 }
 
 .ListItem {
@@ -63,13 +68,24 @@ fieldset .formorder {
 
 /* CONTACT PAGE */
 
+.ContactBody {
+  text-align: center;
+}
+
 .contact {
-  width: 70%;
+  width: 40%;
   height: fit-content;
   margin: auto;
   margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
+}
+
+@media screen and (min-width :100px) and (max-width : 750px) {
+  .contact {
+    width: 100%;
+  }
+  
 }
 
 .contact input {
@@ -95,10 +111,18 @@ fieldset .formorder {
   margin-top: 30px;
 }
 
+.addressinfo .numbers {
+  gap: 50px;
+}
+
 /* ORDER PAGE */
 
 .FormBody {
   text-align: center;
+}
+
+.FormBody h1 {
+  margin: 10px;
 }
 
 .order {
@@ -140,6 +164,7 @@ input {
   width: 170px;
   height: 30px;
   border-radius: 5px;
+  margin: 20px;
 }
 
 
